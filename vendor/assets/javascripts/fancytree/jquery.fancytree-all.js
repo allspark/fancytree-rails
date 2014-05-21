@@ -1863,8 +1863,8 @@ Fancytree.prototype = /** @lends Fancytree# */{
 	generateFormElements: function(selected, active) {
 		// TODO: test case
 		var nodeList,
-			selectedName = (selected !== false) ? options.idPrefix + this._id + "[]" : selected,
-			activeName = (active !== false) ? options.idPrefix + this._id + "_active" : active,
+			selectedName = (selected !== false) ? this.options.idPrefix + this._id + "[]" : selected,
+			activeName = (active !== false) ? this.options.idPrefix + this._id + "_active" : active,
 			id = "fancytree_result_" + this._id,
 			$result = this.$container.find("div#" + id);
 
