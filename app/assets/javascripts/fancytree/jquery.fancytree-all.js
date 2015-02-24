@@ -6536,7 +6536,11 @@ $.ui.fancytree.registerExtension({
 
 		$table.addClass("fancytree-container fancytree-ext-table");
 		tree.tbody = $table.find("> tbody")[0];
-		tree.columnCount = $("thead >tr >th", $table).length;
+    if (ctx.options.columnCount != undefined) {
+      tree.columnCount = ctx.options.columnCount;
+    } else {
+      tree.columnCount = $("thead >tr >th", $table).length;
+    }
 		$(tree.tbody).empty();
 
 		tree.rowFragment = document.createDocumentFragment();
